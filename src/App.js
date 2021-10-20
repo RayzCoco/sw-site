@@ -64,16 +64,16 @@ class App extends Component {
             <Route exact path="/portraits">
               <Portraits />
             </Route>
-            <Route path="/interiors/gallery">
+            <Route path="/interiors/gallery/:id">
               <InteriorGallery />
             </Route>
-            <Route path="/portraits/gallery">
+            <Route path="/portraits/gallery/:id">
               <PortraitGallery />
             </Route>
-            <Route path="/products/gallery">
+            <Route path="/products/gallery/:id">
               <ProductGallery />
             </Route>
-            <Route path="/street/gallery">
+            <Route path="/street/gallery/:id">
               <StreetGallery />
             </Route>
           </Switch>

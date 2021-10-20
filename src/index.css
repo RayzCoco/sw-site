@@ -135,10 +135,18 @@
 }
 
 .loaded-wrapper {
-  animation: fadeIn 500ms 1 ease-in-out;
+  animation: fadeInText 500ms 1 ease-in-out;
 }
 
-@keyframes fadeIn {
+.image-wrapper {
+  animation: fadeIn 1.25s 1 ease-in-out;
+}
+
+.image-placeholder {
+  opacity: 0;
+}
+
+@keyframes fadeInText {
   0% {
     opacity: 0;
     transform: translateY(25px);
@@ -147,6 +155,36 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  #SRLLightbox .SRLNextButton {
+    display: block;
+  }
+  #SRLLightbox .SRLPrevButton {
+    display: block;
+  }
+}
+
+#SRLLightbox .SRLNextButton {
+  right: 0px;
+}
+
+#SRLLightbox .SRLPrevButton {
+  left: 0px;
+}
+
+#SRLLightbox .SRLElementWrapper {
+  padding: 0px 40px;
 }
 
 .textContainer-placeholder {
