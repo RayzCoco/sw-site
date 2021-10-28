@@ -5,14 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import SimpleReactLightbox from 'simple-react-lightbox';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <SimpleReactLightbox>
-      <App />
-    </SimpleReactLightbox>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const loader = document.querySelector('.loader')
+const showLoader = () => loader.classList.remove('loader--hide');
+const hideLoader = () => loader.classList.add('loader--hide');
+
+setTimeout(() => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <SimpleReactLightbox>
+        <App hideLoader={hideLoader} showLoader={showLoader} />
+      </SimpleReactLightbox>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}, 2000)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

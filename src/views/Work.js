@@ -1,13 +1,15 @@
 import { useState } from "react";
 import LazyLoad from "react-lazyload";
 import { Link } from "react-router-dom";
+import street from "../img/img";
+import LazyImage from "../lazy-image";
 
 const Work = () => {
     const [category, useCategory] = useState([
-        { id: 1, title: 'PORTRAITS', src: '', path: '/portraits' },
-        { id: 2, title: 'STREET', src: '', path: '/street' },
-        { id: 3, title: 'INTERIORS', src: '', path: '/interiors' },
-        { id: 4, title: 'PRODUCTS', src: '', path: '/products' }
+        { id: 1, title: 'PORTRAITS', src: street.img1, path: '/portraits' },
+        { id: 2, title: 'STREET', src: street.img2, path: '/street' },
+        { id: 3, title: 'INTERIORS', src: street.img3, path: '/interiors' },
+        { id: 4, title: 'PRODUCTS', src: street.img4, path: '/products' }
     ])
 
     return (
@@ -19,9 +21,7 @@ const Work = () => {
                             <Link key={cat.id} className="image-link relative ratio-3-4 h-0" to={cat.path}>
                                 <div className="image ratio-3-4 relative overflow-hidden">
                                     <div className="absolute top-0 left-0 bottom-0 right-0">
-                                        <LazyLoad classNamePrefix="image">
-                                            <img className="w-full h-full object-cover" src="https://via.placeholder.com/1500x2248" alt="" />
-                                        </LazyLoad>
+                                        <LazyImage className="w-full h-full object-cover" src={cat.src} alt="" />
                                     </div>
                                 </div>
                                 <div className="image-overlay absolute top-0 left-0 w-full h-full bg-white"></div>

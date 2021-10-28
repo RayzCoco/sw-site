@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { SRLWrapper } from "simple-react-lightbox"
+import LazyImage from "../lazy-image"
 
 const GalleryGrid = ({ images }) => {
     const [galleries, setGalleries] = useState(images)
@@ -34,7 +35,7 @@ const GalleryGrid = ({ images }) => {
                     { galleries && galleries.map((gallery) => (
                         gallery['imageURL'].map((url, index) => (
                             <div key={index} className="cursor-pointer">
-                                <img src={url} alt="" />
+                                <LazyImage className="h-full object-cover" src={url} alt="" />
                             </div>
                         ))
                     ))}
