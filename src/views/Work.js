@@ -5,7 +5,7 @@ import street from "../img/img";
 import LazyImage from "../lazy-image";
 
 const Work = () => {
-    const [category, useCategory] = useState([
+    const [category] = useState([
         { id: 1, title: 'PORTRAITS', src: street.img1, path: '/portraits' },
         { id: 2, title: 'STREET', src: street.img2, path: '/street' },
         { id: 3, title: 'INTERIORS', src: street.img3, path: '/interiors' },
@@ -21,7 +21,7 @@ const Work = () => {
                             <Link key={cat.id} className="image-link relative ratio-3-4 h-0" to={cat.path}>
                                 <div className="image ratio-3-4 relative overflow-hidden">
                                     <div className="absolute top-0 left-0 bottom-0 right-0">
-                                        <LazyImage className="w-full h-full object-cover" src={cat.src} alt="" />
+                                        <LazyImage src={cat.src} alt="" />
                                     </div>
                                 </div>
                                 <div className="image-overlay absolute top-0 left-0 w-full h-full bg-white"></div>

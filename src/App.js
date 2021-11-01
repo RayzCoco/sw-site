@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Loadable from 'react-loadable'
 import Work from './views/Work';
 import Contact from './views/Contact';
 import Header from './components/Header';
@@ -13,19 +12,6 @@ import InteriorGallery from './views/inGallery/InteriorGallery';
 import PortraitGallery from './views/inGallery/PortraitGallery';
 import ProductGallery from './views/inGallery/ProductGallery';
 import StreetGallery from './views/inGallery/StreetGallery';
-
-function Loading({ error }) {
-  if(error) {
-    return 'issue'
-  }else {
-    return <div>Loading....</div>
-  }
-}
-
-// const Work = Loadable({
-//   loader: () => import('./views/Work'),
-//   loading: Loading
-// })
 
 class App extends Component {
   state = {

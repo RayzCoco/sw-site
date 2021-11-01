@@ -1,36 +1,11 @@
 import { useState } from "react";
 import { useParams } from "react-router";
 import GalleryGrid from "../../components/GalleryGrid";
-import street from "../../img/img";
+import useStreet from "../../img/useStreet";
 
 const StreetGallery = () => {
     const { id } = useParams()
-    const [ images, useImages ] = useState([
-        { id: 1, imageURL: [
-            street.img1,
-            street.img2,
-            street.img3,
-            street.img4,
-            street.img5,
-            street.img6,
-            street.img7,
-            street.img8,
-            street.img9,
-            street.img11
-        ]},
-        { id: 2, imageURL: [
-            "https://via.placeholder.com/750x919",
-            "https://via.placeholder.com/750x918",
-            "https://via.placeholder.com/750x917",
-            "https://via.placeholder.com/750x916",
-            "https://via.placeholder.com/750x915",
-            "https://via.placeholder.com/750x914",
-            "https://via.placeholder.com/750x913",
-            "https://via.placeholder.com/750x912",
-            "https://via.placeholder.com/750x911",
-            "https://via.placeholder.com/750x910"
-        ]}
-    ])
+    const [ images, useImages ] = useState(useStreet)
 
     const filteredImages = images.filter((image) => {
         return image.id == id
